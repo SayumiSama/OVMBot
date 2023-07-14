@@ -161,3 +161,4 @@ cython_debug/
 
 #password
 config.json
+.ds_store
