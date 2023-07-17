@@ -5,9 +5,15 @@ const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
+
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
+
+client.on('ready', () => {
+	const Guilds = client.guilds.cache.map(guild => guild.id);
+	console.log(Guilds);
+});
 
 for (const folder of commandFolders) {
 	const commandsPath = path.join(foldersPath, folder);

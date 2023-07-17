@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('test')
+		.setName('testglobal')
 		.setDescription('test')
 		.addStringOption(option => option.setName('input').setDescription('test').setRequired(true)),
 	async execute(interaction) {
